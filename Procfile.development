@@ -1,0 +1,3 @@
+web: bundle exec puma -C config/puma.rb -b 'ssl://0.0.0.0:443?key=localhost.key&verify_mode=none&cert=localhost.crt' -b 'tcp://0.0.0.0:80'
+log: while ! tail -f log/development.log ; do sleep 1 ; done
+worker: bundle exec sidekiq -C config/sidekiq.yml

@@ -1,0 +1,19 @@
+default: &default
+  timeout: 5000
+  adapter: postgresql
+  pool: 10
+
+development:
+  primary:
+    <<: *default
+    url: <%= ENV['DATABASE_URL']&.gsub('?', 'development') %>
+
+test:
+  primary:
+    <<: *default
+    url: <%= ENV['DATABASE_URL']&.gsub('?', 'test') %>
+
+production:
+  primary:
+    <<: *default
+    url: <%= (ENV['DATABASE_URL']) %>

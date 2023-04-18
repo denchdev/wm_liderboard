@@ -1,0 +1,408 @@
+require:
+  - rubocop-rails
+  - rubocop-minitest
+  - rubocop-performance
+
+AllCops:
+  TargetRubyVersion: 3.1.2
+
+Performance:
+  Exclude:
+    - "**/test/**/*"
+
+Layout/EmptyLinesAroundAccessModifier:
+  EnforcedStyle: only_before
+
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/HashAlignment:
+  EnforcedHashRocketStyle: table
+
+Layout/IndentationConsistency:
+  EnforcedStyle: indented_internal_methods
+
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+Style/BlockDelimiters:
+  EnforcedStyle: braces_for_chaining
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+Style/HashAsLastArrayItem:
+  EnforcedStyle: no_braces
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: double_quotes
+
+Style/BlockComments:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Rails/UnknownEnv:
+  Environments:
+    - development
+    - staging
+    - test
+    - production
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/BlockNesting:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Enabled: false
+
+Metrics/ParameterLists:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+Style/ClassVars:
+  Enabled: false
+
+Style/CombinableLoops:
+  Enabled: false
+
+Style/For:
+  Enabled: false
+
+Style/FloatDivision:
+  Enabled: false
+
+Style/GlobalVars:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Style/HashLikeCase:
+  Enabled: false
+
+Style/IdenticalConditionalBranches:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/InfiniteLoop:
+  Enabled: false
+
+Style/InverseMethods:
+  Enabled: false
+
+Style/KeywordParametersOrder:
+  Enabled: false
+
+Style/Lambda:
+  Enabled: false
+
+Style/LineEndConcatenation:
+  Enabled: false
+
+Style/MixinUsage:
+  Enabled: false
+
+Style/NegatedIf:
+  Enabled: false
+
+Style/Next:
+  Enabled: false
+
+Style/Not:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/MultilineBlockChain:
+  Enabled: false
+
+Style/MultilineIfModifier:
+  Enabled: false
+
+Style/MultipleComparison:
+  Enabled: false
+
+Style/MultilineTernaryOperator:
+  Enabled: false
+
+Style/MutableConstant:
+  Enabled: false
+
+Style/NestedParenthesizedCalls:
+  Enabled: false
+
+Style/NestedTernaryOperator:
+  Enabled: false
+
+Style/NumericLiteralPrefix:
+  Enabled: false
+
+Style/NumericPredicate:
+  Enabled: false
+
+Style/OptionalBooleanParameter:
+  Enabled: false
+
+Style/OrAssignment:
+  Enabled: false
+
+Style/PerlBackrefs:
+  Enabled: false
+
+Style/PreferredHashMethods:
+  Enabled: false
+
+Style/RaiseArgs:
+  Enabled: false
+
+Style/RedundantAssignment:
+  Enabled: false
+
+Style/RedundantFetchBlock:
+  Enabled: false
+
+Style/RedundantInterpolation:
+  Enabled: false
+
+Style/RedundantRegexpEscape:
+  Enabled: false
+
+Style/RedundantSelf:
+  Enabled: false
+
+Style/RegexpLiteral:
+  Enabled: false
+
+Style/RescueModifier:
+  Enabled: false
+
+Style/RescueStandardError:
+  Enabled: false
+
+Style/SafeNavigation:
+  Enabled: false
+
+Style/SignalException:
+  Enabled: false
+
+Style/SlicingWithRange:
+  Enabled: false
+
+Style/SoleNestedConditional:
+  Enabled: false
+
+Style/StringConcatenation:
+  Enabled: false
+
+Style/StructInheritance:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+
+Style/SymbolProc:
+  Enabled: false
+
+Style/UnlessElse:
+  Enabled: false
+
+Style/WhileUntilDo:
+  Enabled: false
+
+Style/WhileUntilModifier:
+  Enabled: false
+
+Lint/AssignmentInCondition:
+  Enabled: false
+
+Lint/BinaryOperatorWithIdenticalOperands:
+  Enabled: false
+
+Lint/BooleanSymbol:
+  Enabled: false
+
+Lint/CircularArgumentReference:
+  Enabled: false
+
+Lint/DisjunctiveAssignmentInConstructor:
+  Enabled: false
+
+Lint/DuplicateMethods:
+  Enabled: false
+
+Lint/EmptyConditionalBody:
+  Enabled: false
+
+Lint/EmptyWhen:
+  Enabled: false
+
+Style/IfInsideElse:
+  Enabled: false
+
+Lint/IneffectiveAccessModifier:
+  Enabled: false
+
+Lint/MissingSuper:
+  Enabled: false
+
+Lint/NestedMethodDefinition:
+  Enabled: false
+
+Lint/NonDeterministicRequireOrder:
+  Enabled: false
+
+Lint/ParenthesesAsGroupedExpression:
+  Enabled: false
+
+Lint/RedundantWithIndex:
+  Enabled: false
+
+Lint/RequireParentheses:
+  Enabled: false
+
+Lint/RescueException:
+  Enabled: false
+
+Lint/ShadowedArgument:
+  Enabled: false
+
+Lint/SuppressedException:
+  Enabled: false
+
+Lint/ToJSON:
+  Enabled: false
+
+Lint/UnusedBlockArgument:
+  Enabled: false
+
+Lint/UnusedMethodArgument:
+  Enabled: false
+
+Lint/UriRegexp:
+  Enabled: false
+
+Lint/UselessAccessModifier:
+  Enabled: false
+
+Layout/LineLength:
+  Enabled: false
+
+Naming/AccessorMethodName:
+  Enabled: false
+
+Naming/MemoizedInstanceVariableName:
+  Enabled: false
+
+Naming/MethodParameterName:
+  Enabled: false
+
+Naming/PredicateName:
+  Enabled: false
+
+Naming/VariableNumber:
+  Enabled: false
+
+Rails/ApplicationController:
+  Enabled: false
+
+Rails/BulkChangeTable:
+  Enabled: false
+
+Rails/CreateTableWithTimestamps:
+  Enabled: false
+
+Rails/Date:
+  Enabled: false
+
+Rails/DynamicFindBy:
+  Enabled: false
+
+Rails/FilePath:
+  Enabled: false
+
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+
+Rails/HelperInstanceVariable:
+  Enabled: false
+
+Rails/HttpStatus:
+  Enabled: false
+
+Rails/InverseOf:
+  Enabled: false
+
+Rails/LexicallyScopedActionFilter:
+  Enabled: false
+
+Rails/LinkToBlank:
+  Enabled: false
+
+Rails/NotNullColumn:
+  Enabled: false
+
+Rails/Output:
+  Enabled: false
+
+Rails/OutputSafety:
+  Enabled: false
+
+Rails/RedundantForeignKey:
+  Enabled: false
+
+Rails/ReversibleMigration:
+  Enabled: false
+
+Rails/SkipsModelValidations:
+  Enabled: false
+
+Rails/TimeZone:
+  Enabled: false
+
+Rails/UniqueValidationWithoutIndex:
+  Enabled: false
+
+Security/Eval:
+  Enabled: false
+
+Security/Open:
+  Enabled: false
+
+Security/YAMLLoad:
+  Enabled: false

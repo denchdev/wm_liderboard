@@ -1,0 +1,4 @@
+update_user_score_every_second:
+  class: Schedule::Test::UpdateUserScoreJob
+  cron: '* * * * * * *'
+  enabled: true
