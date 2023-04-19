@@ -23,13 +23,3 @@ Sidekiq.configure_server do |config|
     SidekiqScheduler::Scheduler.instance.reload_schedule!
   end
 end
-
-Sidekiq.configure_server do |config|
-  # config.super_fetch!
-  # config.reliable_scheduler!
-  SidekiqScheduler::Scheduler.instance.enabled = true
-
-  config.periodic do |mgr|
-    mgr.register("* * * * * * *", Schedule::Test::UpdateUserScoreJob)
-  end
-end

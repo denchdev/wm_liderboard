@@ -1,4 +1,7 @@
-update_user_score_every_second:
-  class: Schedule::Test::UpdateUserScoreJob
-  cron: '* * * * * * *'
-  enabled: true
+:scheduler:
+  :schedule:
+    update_user_score_every_second:
+      class: Schedule::Test::UpdateUserScoreJob
+      every: '1s'
+      enabled: true
+      queue: low

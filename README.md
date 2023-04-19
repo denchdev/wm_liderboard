@@ -1,24 +1,25 @@
-# README
+## Getting Started
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To start app, you can use command
 
-Things you may want to cover:
+`docker compose build`
 
-* Ruby version
+`docker compose up`
 
-* System dependencies
+## Testing
 
-* Configuration
+To run all tests, you can use command
 
-* Database creation
+`docker compose run --rm wfapp sh -c "RAILS_ENV=test bundle exec rake db:reset && bundle exec rspec"`
 
-* Database initialization
+## Generate test data
 
-* How to run the test suite
+To generate test users, you can use command
 
-* Services (job queues, cache servers, search engines, etc.)
+`docker compose run --rm wfapp sh -c "bundle exec rake leaderboard_test:generate_users"`
 
-* Deployment instructions
+## Update test data
 
-* ...
+To start test users updating job, you can use command
+
+`docker compose run --rm wfapp sh -c "bundle exec rake leaderboard_test:update_users"`
