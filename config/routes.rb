@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     namespace :public do
       namespace :v1 do
         resource :leaderboard, only: %i[show]
+        resources :promts, only: %i[index]
       end
     end
   end

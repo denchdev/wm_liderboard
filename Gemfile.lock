@@ -119,6 +119,14 @@ GEM
     debug_inspector (1.1.0)
     diff-lcs (1.5.0)
     docile (1.4.0)
+    elastic-transport (8.2.3)
+      faraday (< 3)
+      multi_json
+    elasticsearch (8.9.0)
+      elastic-transport (~> 8)
+      elasticsearch-api (= 8.9.0)
+    elasticsearch-api (8.9.0)
+      multi_json
     erubi (1.12.0)
     et-orbi (1.2.7)
       tzinfo
@@ -127,6 +135,10 @@ GEM
     factory_bot_rails (6.2.0)
       factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
+    faraday (2.7.10)
+      faraday-net_http (>= 2.0, < 3.1)
+      ruby2_keywords (>= 0.0.4)
+    faraday-net_http (3.0.2)
     ffaker (2.21.0)
     ffi (1.15.5)
     formtastic (4.0.0)
@@ -141,6 +153,10 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
     hashdiff (1.0.1)
+    hashie (5.0.0)
+    httparty (0.21.0)
+      mini_mime (>= 1.0.0)
+      multi_xml (>= 0.5.2)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     inherited_resources (1.13.1)
@@ -182,6 +198,8 @@ GEM
     mini_mime (1.1.2)
     minitest (5.18.0)
     msgpack (1.7.0)
+    multi_json (1.15.0)
+    multi_xml (0.6.0)
     net-imap (0.3.4)
       date
       net-protocol
@@ -196,6 +214,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.14.3-arm64-darwin)
       racc (~> 1.4)
+    pagy (6.0.4)
     parallel (1.23.0)
     parser (3.2.2.0)
       ast (~> 2.4.1)
@@ -315,6 +334,9 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    searchkick (5.2.4)
+      activemodel (>= 5.2)
+      hashie
     shoulda (4.0.0)
       shoulda-context (~> 2.0)
       shoulda-matchers (~> 4.0)
@@ -377,9 +399,12 @@ DEPENDENCIES
   bootsnap
   database_cleaner (= 2.0.2)
   debug
+  elasticsearch (~> 8.9.0)
   factory_bot_rails (~> 6.2.0)
   ffaker (~> 2.21.0)
+  httparty (~> 0.21.0)
   lefthook (~> 1.3.10)
+  pagy (~> 6.0.4)
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.3)
@@ -393,6 +418,7 @@ DEPENDENCIES
   rubocop-performance (= 1.16.0)
   rubocop-rails (= 2.18.0)
   rubocop-rspec (= 2.19.0)
+  searchkick (~> 5.2.4)
   shoulda (~> 4.0.0)
   shoulda-context (~> 2.0.0)
   shoulda-matchers (~> 4.5.1)

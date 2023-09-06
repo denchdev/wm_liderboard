@@ -32,4 +32,6 @@ RUN bundle install --jobs 8 --retry 3 --without production
 # Copy the main application.
 COPY . ./
 
+RUN ["chmod", "-R", "+x", "./entrypoints/docker-entrypoint.sh"]
+
 ENTRYPOINT ["./entrypoints/docker-entrypoint.sh"]

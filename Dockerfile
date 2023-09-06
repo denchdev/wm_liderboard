@@ -39,4 +39,6 @@ RUN rm -rf .github
 RUN rm -rf .env localhost.crt localhost.key
 RUN rm -rf test spec
 
+RUN ["chmod", "-R", "+x", "./entrypoints/docker-entrypoint.sh"]
+
 ENTRYPOINT ["./entrypoints/docker-entrypoint.sh"]

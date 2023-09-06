@@ -1,10 +1,11 @@
 version: '3.5'
 
 volumes:
-  postgres-data:
-  redis-data:
-  cache:
-  bundler:
+  wf-postgres-data:
+  wf-redis-data:
+  wf-cache:
+  wf-bundler:
+  wf-elasticsearch-data:
 
 services:
   wfapp:
@@ -16,22 +17,23 @@ services:
       - .env
     volumes:
       - ./:/usr/src/app
-      - cache:/cache
-      - bundler:/usr/local/bundle/
+      - wf-cache:/cache
+      - wf-bundler:/usr/local/bundle/
     ports:
-      - "80:80"
-      - "443:443"
-      - "3000:3000"
+      - 80:80
+      - 443:443
+      - 3000:3000
     depends_on:
       - wfredis
       - wfdb
+      - wfelasticsearch
 
   wfdb:
     image: postgres:15.2
     volumes:
-      - postgres-data:/var/lib/postgresql/data
+      - wf-postgres-data:/var/lib/postgresql/data
     ports:
-      - "25432:5432"
+      - 25432:5432
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
@@ -41,8 +43,22 @@ services:
   wfredis:
     image: redis:7.0.10
     ports:
-      - "26379:6379"
+      - 26379:6379
     volumes:
-      - redis-data:/var/lib/redis/data:cached
+      - wf-redis-data:/var/lib/redis/data:cached
     logging:
       driver: none
+
+  wfelasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.9.1
+    environment:
+      - cluster.name=docker-cluster
+      - discovery.type=single-node
+      - logger.level=ERROR
+      - xpack.security.enabled=false
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    volumes:
+      - wf-elasticsearch-data:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
